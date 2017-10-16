@@ -11,8 +11,8 @@
                                                           datetime="{{ post.created_time }}">{{ post.created_time }}</time></a></span>
                 <span class="post-author"><a href="#">{{ post.author }}</a></span>
                 <span class="comments-link">
-                    <a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count }} 评论</a></span>
-                <span class="views-count"><a href="#">588 阅读</a></span>
+                    <a href="{{ post.get_absolute_url }}#comment-area">{{ post.comment_set.count}} 评论</a></span>
+                <span class="views-count"><a href="#">{{ post.views }}阅读</a></span>
             </div>
         </header>
         <div class="entry-content clearfix">
@@ -49,7 +49,7 @@
             </div>    <!-- row -->
         </form>
         <div class="comment-list-panel">
-            <h3>评论列表，共 <span>{{ post.comment_set.count }}</span> 条评论</h3>
+            <h3>评论列表，共 <span>{{ post.comment_set.count}}</span> 条评论</h3>
             <ul class="comment-list list-unstyled">
                 {% for comment in comment_list %}
                     <li class="comment-item">
@@ -82,9 +82,6 @@
             </li>
             <li>
                 <a href="#">资源列表</a>
-            </li>
-            <li>
-                <a href="#">获取帮助</a>
             </li>
         </ul>
     </div>
